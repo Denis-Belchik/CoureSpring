@@ -1,0 +1,27 @@
+### Добавление
+GET http://localhost:8080/employee/add?firstName=Ivan&lastName=Ivanov
+
+### Добавление 1
+GET http://localhost:8080/employee/add?firstName=Ivan1&lastName=Ivanov1
+
+### Добавление 2
+GET http://localhost:8080/employee/add?firstName=Ivan2&lastName=Ivanov2
+
+
+
+### Удаление
+GET http://localhost:8080/employee/remove?firstName=Ivan&lastName=Ivanov
+
+### Удаление 1
+GET http://localhost:8080/employee/remove?firstName=Ivan1&lastName=Ivanov1
+
+### Удаление 2
+GET http://localhost:8080/employee/remove?firstName=Ivan2&lastName=Ivanov2
+
+
+
+### Поиск
+GET http://localhost:8080/employee/find?firstName=Ivan&lastName=Ivanov
+
+### Печать
+GET http://localhost:8080/employee/get
