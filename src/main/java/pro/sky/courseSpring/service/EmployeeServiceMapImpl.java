@@ -1,31 +1,35 @@
 package pro.sky.courseSpring.service;
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import pro.sky.courseSpring.exeptions.EmployeeAlreadyAddedException;
 import pro.sky.courseSpring.exeptions.EmployeeNotFoundException;
 import pro.sky.courseSpring.model.Employee;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 
+@Primary
 @Service
-public class EmployeeServiceImp implements EmployeeService {
-    private final List<Employee> employees;
+public class EmployeeServiceMapImpl implements EmployeeService {
+    private final Map<String, Employee> employees;
 
-    public EmployeeServiceImp() {
-        this.employees = new ArrayList<>();
+    public EmployeeServiceMapImpl() {
+        this.employees = new HashMap<>();
     }
 
     @Override
     public Employee addEmployee(String firstName, String lastName) {
         Employee employee = new Employee(firstName, lastName);
 
-        if (employees.contains(employee)) {
+        String key = firstName + lastName;
+
+        if (employees.containsKey(key)) {
             throw new EmployeeAlreadyAddedException("Сотрудник уже есть");
         }
 
-        employees.add(employee);
+        employees.put(key, employee);
 
         return employee;
     }
@@ -34,11 +38,14 @@ public class EmployeeServiceImp implements EmployeeService {
     public Employee removeEmployee(String firstName, String lastName) {
         Employee employee = new Employee(firstName, lastName);
 
-        if (!employees.contains(employee)) {
+        String key = firstName + lastName;
+
+        if (!employees.containsKey(key)) {
             throw new EmployeeNotFoundException("Сотрудника нет");
         }
 
-        employees.remove(employee);
+
+        employees.remove(key);
 
         return employee;
     }
@@ -47,7 +54,9 @@ public class EmployeeServiceImp implements EmployeeService {
     public Employee findEmployee(String firstName, String lastName) {
         Employee employee = new Employee(firstName, lastName);
 
-        if (!employees.contains(employee)) {
+        String key = firstName + lastName;
+
+        if (!employees.containsKey(key)) {
             throw new EmployeeNotFoundException("Сотрудника нет");
         }
 
@@ -55,7 +64,8 @@ public class EmployeeServiceImp implements EmployeeService {
     }
 
     @Override
-    public List<Employee> getAllEmployee() {
-        return Collections.unmodifiableList(employees);
+    public Collection<Employee> getAllEmployee() {
+        Collection<Employee> employee = employees.values();
+        return employee;
     }
 }
