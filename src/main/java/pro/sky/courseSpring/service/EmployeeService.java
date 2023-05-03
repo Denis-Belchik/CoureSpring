@@ -2,6 +2,7 @@ package pro.sky.courseSpring.service;
 
 import pro.sky.courseSpring.model.Employee;
 
+import java.util.Collection;
 import java.util.List;
 
 public interface EmployeeService {
@@ -12,5 +13,5 @@ public interface EmployeeService {
 
     Employee findEmployee(String firstName, String lastName);
 
-    List<Employee> getAllEmployee();
+    Collection<Employee> getAllEmployee();
 }
