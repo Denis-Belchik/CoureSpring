@@ -7,6 +7,7 @@ import pro.sky.courseSpring.exeptions.EmployeeNotFoundException;
 import pro.sky.courseSpring.model.Employee;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -20,8 +21,8 @@ public class EmployeeServiceMapImpl implements EmployeeService {
     }
 
     @Override
-    public Employee addEmployee(String firstName, String lastName) {
-        Employee employee = new Employee(firstName, lastName);
+    public Employee addEmployee(String firstName, String lastName, int salary, int department) {
+        Employee employee = new Employee(firstName, lastName, salary, department);
 
         String key = firstName + lastName;
 
@@ -35,8 +36,8 @@ public class EmployeeServiceMapImpl implements EmployeeService {
     }
 
     @Override
-    public Employee removeEmployee(String firstName, String lastName) {
-        Employee employee = new Employee(firstName, lastName);
+    public Employee removeEmployee(String firstName, String lastName, int salary, int department) {
+        Employee employee = new Employee(firstName, lastName, salary, department);
 
         String key = firstName + lastName;
 
@@ -44,15 +45,14 @@ public class EmployeeServiceMapImpl implements EmployeeService {
             throw new EmployeeNotFoundException("Сотрудника нет");
         }
 
-
         employees.remove(key);
 
         return employee;
     }
 
     @Override
-    public Employee findEmployee(String firstName, String lastName) {
-        Employee employee = new Employee(firstName, lastName);
+    public Employee findEmployee(String firstName, String lastName, int salary, int department) {
+        Employee employee = new Employee(firstName, lastName, salary, department);
 
         String key = firstName + lastName;
 
@@ -65,7 +65,6 @@ public class EmployeeServiceMapImpl implements EmployeeService {
 
     @Override
     public Collection<Employee> getAllEmployee() {
-        Collection<Employee> employee = employees.values();
-        return employee;
+        return Collections.unmodifiableCollection(employees.values());
     }
 }
