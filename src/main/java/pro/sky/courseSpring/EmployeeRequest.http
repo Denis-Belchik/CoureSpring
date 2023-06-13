@@ -1,27 +1,54 @@
+### Сумма
+GET http://localhost:8080/department/2/salary/sum
+### Максимум
+GET http://localhost:8080/department/2/salary/max
+### Минимум
+GET http://localhost:8080/department/2/salary/min
+### По департаменту
+GET http://localhost:8080/department/20/employees
+### Все
+GET http://localhost:8080/department/employees
+
+
 ### Добавление
-GET http://localhost:8080/employee/add?firstName=Ivan&lastName=Ivanov
-
+GET http://localhost:8080/employee/add?firstName=Ivan&lastName=Ivanov&salary=100&department=5
 ### Добавление 1
-GET http://localhost:8080/employee/add?firstName=Ivan1&lastName=Ivanov1
-
+GET http://localhost:8080/employee/add?firstName=Ivan1&lastName=Ivanov1&salary=200&department=2
 ### Добавление 2
-GET http://localhost:8080/employee/add?firstName=Ivan2&lastName=Ivanov2
+GET http://localhost:8080/employee/add?firstName=Ivan2&lastName=Ivanov2&salary=300&department=1
+### Добавление 3
+GET http://localhost:8080/employee/add?firstName=Ivan3&lastName=Ivanov3&salary=400&department=2
+### Добавление 4
+GET http://localhost:8080/employee/add?firstName=Ivan4&lastName=Ivanov4&salary=400&department=2
+### Добавление 5
+GET http://localhost:8080/employee/add?firstName=Ivan5&lastName=Ivanov5&salary=400&department=3
 
-
+### Мин ЗП
+GET http://localhost:8080/departments/min-salary?departmentId=2
+### Макс ЗП
+GET http://localhost:8080/departments/max-salary?departmentId=2
+### Принт по отделу 1
+GET http://localhost:8080/departments/all?departmentId=1
+### Принт по отделу 2
+GET http://localhost:8080/departments/all?departmentId=2
+### Принт
+GET http://localhost:8080/departments/all
 
 ### Удаление
-GET http://localhost:8080/employee/remove?firstName=Ivan&lastName=Ivanov
-
+GET http://localhost:8080/employee/remove?firstName=Ivan&lastName=Ivanov&salary=100&department=1
 ### Удаление 1
-GET http://localhost:8080/employee/remove?firstName=Ivan1&lastName=Ivanov1
-
+GET http://localhost:8080/employee/remove?firstName=Ivan1&lastName=Ivanov1&salary=200&department=1
 ### Удаление 2
-GET http://localhost:8080/employee/remove?firstName=Ivan2&lastName=Ivanov2
-
-
+GET http://localhost:8080/employee/remove?firstName=Ivan2&lastName=Ivanov2&salary=300&department=1
+### Удаление 3
+GET http://localhost:8080/employee/remove?firstName=Ivan3&lastName=Ivanov3&salary=400&department=2
+### Удаление 4
+GET http://localhost:8080/employee/remove?firstName=Ivan4&lastName=Ivanov4&salary=400&department=2
+### Удаление 5
+GET http://localhost:8080/employee/remove?firstName=Ivan5&lastName=Ivanov5&salary=400&department=2
 
 ### Поиск
-GET http://localhost:8080/employee/find?firstName=Ivan&lastName=Ivanov
+GET http://localhost:8080/employee/find??firstName=Ivan&lastName=Ivanov&salary=100&department=1
 
 ### Печать
 GET http://localhost:8080/employee/get
