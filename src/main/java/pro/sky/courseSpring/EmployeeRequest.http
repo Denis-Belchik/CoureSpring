@@ -1,7 +1,19 @@
+### Сумма
+GET http://localhost:8080/department/2/salary/sum
+### Максимум
+GET http://localhost:8080/department/2/salary/max
+### Минимум
+GET http://localhost:8080/department/2/salary/min
+### По департаменту
+GET http://localhost:8080/department/20/employees
+### Все
+GET http://localhost:8080/department/employees
+
+
 ### Добавление
 GET http://localhost:8080/employee/add?firstName=Ivan&lastName=Ivanov&salary=100&department=5
 ### Добавление 1
-GET http://localhost:8080/employee/add?firstName=Ivan1&lastName=Ivanov1&salary=200&department=5
+GET http://localhost:8080/employee/add?firstName=Ivan1&lastName=Ivanov1&salary=200&department=2
 ### Добавление 2
 GET http://localhost:8080/employee/add?firstName=Ivan2&lastName=Ivanov2&salary=300&department=1
 ### Добавление 3

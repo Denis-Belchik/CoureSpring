@@ -18,6 +18,10 @@ public class EmployeeServiceMapImpl implements EmployeeService {
 
     public EmployeeServiceMapImpl() {
         this.employees = new HashMap<>();
+//        this.employees.put("DenisBelchik", new Employee("Denis", "Belchik", 500, 1));
+//        this.employees.put("SaraIvanov",new Employee("Sara", "Ivanov", 5400, 2));
+//        this.employees.put("IvanPetrov",new Employee("Ivan", "Petrov", 300, 3));
+//        this.employees.put("FedorFedorov",new Employee("Fedor", "Fedorov", 100, 4));
     }
 
     @Override
